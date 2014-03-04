@@ -24,3 +24,6 @@ def factorize(n):
             factors.append(n/x)
 
     return factors
+
+def chunker(lst, length):
+    return (lst[pos:pos+length] for pos in xrange(0, len(lst)))
