@@ -1,4 +1,4 @@
-from number3 import isPrime, largestPrime
+from number3 import isPrime, largestPrime, factorize
 
 def testTwoIsPrime():
     assert isPrime(2)
@@ -11,6 +11,9 @@ def testTwentyIsNotPrime():
 
 def testLargestPrimeOf13195Is29():
     assert largestPrime(13195) == 29
+
+def testfactor():
+    print factorize(9009)
 
 def testSolution():
     answer = largestPrime(600851475143)
