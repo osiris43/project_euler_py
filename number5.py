@@ -1,4 +1,5 @@
 import lib
+from collections import defaultdict
 
 def prime_factorization(n):
     primes = []
@@ -13,22 +14,20 @@ def prime_factorization(n):
     return primes
 
 def least_common_multiple(numbers):
-    factors = {}
+    factorsDict = {}
 
     counter = {}
     # Get the prime factors for each number in the list
     for number in numbers:
-        factors[number] = [prime_factorization(number)]
+        factorsDict[number] = [prime_factorization(number)]
 
     # For each number and list of factors
-    for k,v in factors.iteritems():
-        factorsCount = {}
+    for factors in factorsDict.values():
+        factorsCount = defaultdict(int)
 
-        for x in v[0]:
-            if x in factorsCount:
-                factorsCount[x] += 1
-            else:
-                factorsCount[x] = 1
+
+        for x in factors[0]:
+            factorsCount[x] += 1
 
         for a,b in factorsCount.iteritems():
             if counter.has_key(a):
